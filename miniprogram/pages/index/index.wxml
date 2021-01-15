@@ -1,0 +1,36 @@
+
+
+
+<recommend wx:if="{{PageCur=='recommend'}}"></recommend>
+<column data="{{column}}" wx:if="{{PageCur=='column'}}"></column>
+<me data="{{me}}" wx:if="{{PageCur=='me'}}"></me>
+
+    
+
+
+<block wx:if="{{PageCur=='home'}}">
+<cu-custom bgColor="bg-gradual-green"><view slot="content">历史汇总</view></cu-custom>
+
+<view class="cu-card article" wx:for="{{light}}"  >
+  <view class="cu-item shadow" bindtap="bindViewTap" data-website='{{item.website}}' data-title='{{item.title}}'>
+    <view class="title">
+      <view class="text-cut">{{item.title}}</view>
+    </view>
+    <view class="content" >
+      <image src="{{item.images}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content" > {{item.introduction}}</view>
+        <view>
+          <view class="cu-tag bg-red light sm round" wx:for="{{item.tag}}">{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+
+<!-- <loading hidden="{{loadingHidden}}">
+        加载中...
+</loading> -->
+
+<view class="cu-load bg-white {{!isLoad?'loading':'over'}}"></view>

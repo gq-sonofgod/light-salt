@@ -1,0 +1,98 @@
+<!--miniprogram/pages/advance/advance.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">后台文章管理</view>
+</cu-custom>
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+<form bindsubmit="formSubmit" >
+<view class="cu-form-group" >
+    <text class="title cuIcon-comment text-blue margin-right">  </text>
+    <input  name="articleid"  placeholder="请输入文章ID" ></input>
+  </view >
+
+ <view class="cu-form-group">
+    <text class="title cuIcon-title text-orange margin-right">  </text>
+    <input  name="title" placeholder="请输入文章标题"></input>
+  </view >
+
+  <view class="cu-form-group" >
+    <text class="title cuIcon-comment text-blue margin-right">  </text>
+    <input  name="introduction"  placeholder="请输入文章简介" ></input>
+  </view >
+  
+  <view class="cu-form-group" >
+    <text class="title cuIcon-discover text-green margin-right">  </text>
+    <input  name="website" placeholder="请输入文章网址" maxlength="-1"></input>
+  </view >
+
+  <view class="cu-form-group">
+    <text class="title cuIcon-copy text-pink margin-right">  </text>
+    <input  name="image"  placeholder="请输入图片网址或者上传图片" maxlength="-1"></input>
+  </view >
+  <view class="cu-form-group">
+    <text class="title cuIcon-copy text-pink margin-right">  </text>
+    <input  name="tag"  placeholder="请输入标签" maxlength="-1"></input>
+  </view >
+  	<view class="cu-form-group">
+    <text class="title cuIcon-tag text-blue margin-right">  </text>
+		<view class="title">选择标签</view>
+		<picker bindchange="PickerChange" value="{{tag1}}" range="{{picker}}">
+			<view class="picker">
+				{{tag1?picker[tag1]:'点击选择'}}
+			</view>
+		</picker>  
+	</view>  
+	<!-- 单选框 column-->
+	<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 所属栏目（默认光盐）
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="RadioModal">点击选择</button>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='RadioModal'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog" catchtap>
+    <radio-group class="block">
+      <view class="cu-list menu text-left">
+        <view class="cu-item" wx:for="{{columnList}}" wx:key >
+          <label class="flex justify-between align-center flex-sub" bindtap="getcolumn" data-column="{{item}}">
+            <view class="flex-sub">{{item}}</view>
+            <radio class="round"></radio>
+          </label>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+</view>
+<!-- 单选框 type-->
+	<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 媒体类型（默认文章）
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="RadioModal1">点击选择</button>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='RadioModal1'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog" catchtap>
+    <radio-group class="block">
+      <view class="cu-list menu text-left">
+        <view class="cu-item" wx:for="{{typeList}}" wx:key >
+          <label class="flex justify-between align-center flex-sub" bindtap="gettype" data-type="{{item}}">
+            <view class="flex-sub">{{item}}</view>
+            <radio class="round"></radio>
+          </label>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+</view>
+
+<button  class="bt_connect" shape="circle" formType='submit' >提交</button>
+</form>
+</view >
+<!-- <button  class="bt_connect" shape="circle" bindtap="addAudio">添加音频</button> -->

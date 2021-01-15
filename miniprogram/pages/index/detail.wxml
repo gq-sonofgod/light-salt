@@ -1,0 +1,2 @@
+<!--miniprogram/pages/index/tes.wxml-->
+<web-view src="{{website}}"></web-view>
