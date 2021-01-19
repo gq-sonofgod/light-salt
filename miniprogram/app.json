@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/seatSelect/index",
     "pages/index/index",
-    "pages/administrator/publish/index",
-    "pages/index/te"
+    "pages/administrator/publish/index"
+ 
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

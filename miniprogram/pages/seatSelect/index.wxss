@@ -1,0 +1,38 @@
+/* miniprogram/pages/seatSelect/index.wxss */
+.movable-area {
+  margin-top: 0rpx;
+  display: flex;
+  flex-direction: row;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
+  height: 1100rpx;
+  width: 100%;
+  background: #f7f7f7;
+}
+.movable-view {
+  position: relative;
+  height: 90%;
+  width:90%;
+  display: flex;
+  flex-direction: column;
+  background: #e4d9d9;
+}
+.downContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.seatView {
+  opacity: 0.5;
+}
+.x {
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.y {
+  display: flex;
+  flex-direction: row;
+}
