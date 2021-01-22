@@ -938,7 +938,7 @@ button.icon.lg {
 	text-align: center;
 	justify-content: center;
 	align-items: center;
-	background-color: #ccc;
+	background-color: rgb(238, 238, 238);
 	color: var(--white);
 	white-space: nowrap;
 	position: relative;

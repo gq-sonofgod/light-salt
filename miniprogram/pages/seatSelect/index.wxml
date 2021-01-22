@@ -9,21 +9,23 @@
     </view>
   </view>
 </scroll-view>
-<button bindtap='resetSeats'  ></button>
-<!-- 大堂座位 -->
-<block wx:if="{{TabCur==0}}">
 
+<!-- 大堂座位 -->
+<block>
   <movable-area class='movable-area' scale-area="true">
-  <movable-view id='movable-view' class="movable-view" direction="all" scale="true" scale-min="0.5" scale-max="2" scale-value="1" inertia="true">
+  <view class='hallTitle'>
+  <text>讲台</text>
+  </view>
+  <movable-view id='movable-view' class="movable-view" direction="all" scale="true" scale-min="0.5" scale-max="2" scale-value='{{scalevalue}}' inertia="true">
           <view class='x' wx:for="{{seats}}" wx:for-index="idx">
             <view wx:for="{{item}}" wx:for-index="idy">
               <view class="cu-avatar radius" data-idx='{{idx}}' data-idy='{{idy}}' bind:tap='selectSeat'>
-              <text class="cuIcon-people{{item.able?'':'fill'}} text-{{item.openid==openid?'red':item.color}}"></text>
+              <text class="cuIcon-people{{item.able?'':'fill'}} text-{{item.openid==openid?'orange':item.color}}"></text>
               </view>
             </view>
           </view>
   </movable-view>
-</movable-area>
+  </movable-area>
     
 <!-- <view class='{{showview?"ticketCount":"submit_hide"}}'>
   <view>你选择了：</view>
@@ -37,11 +39,8 @@
 <view class='{{showview?"submit":"submit_hide"}}' bind:tap="submit">
     <text>点击预约</text>
     
-</view>
-<button class='{{showview?"submit_hide":""}}'>您预约了{{row}}排{{column}}列
-</button>
-<button class='{{showview?"submit_hide":""}}' bindtap="cancel" type="primary">点击取消预约</button> -->
+</view> -->
+<button class='{{showview?"submit_hide":""}}'>您预约了{{row}}排{{column}}列</button>
+<!-- <button class='{{showview?"submit_hide":""}}' bindtap="cancel" type="primary">点击取消预约</button>
+<button bindtap='resetSeats'>fuwei</button> -->
 </block>
-
-<!-- 三楼座位 -->
-<block wx:if="{{TabCur==2}}">hello</block>

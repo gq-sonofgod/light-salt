@@ -8,23 +8,20 @@
   align-items: center;
   height: 1100rpx;
   width: 100%;
-  background: #f7f7f7;
+  background: #ffffff;
 }
 .movable-view {
   position: relative;
-  height: 90%;
+  height: 80%;
   width:90%;
   display: flex;
   flex-direction: column;
-  background: #e4d9d9;
+  opacity: 0.7;
 }
 .downContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-.seatView {
-  opacity: 0.5;
 }
 .x {
   display: flex;
@@ -35,4 +32,23 @@
 .y {
   display: flex;
   flex-direction: row;
+}
+.hallTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0rpx;
+  width: 460rpx;
+  background: #e2e2e2;
+  border-bottom-left-radius: 90rpx;
+  border-bottom-right-radius: 90rpx;
+}
+
+.hallTitle text {
+  padding: 10rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
 }
